@@ -7,6 +7,7 @@ const scisBtn=document.querySelector('#scissorsBtn');
 const msgField=document.querySelector('#res');
 const lNumber=document.getElementById('lNumber');
 const rNumber=document.getElementById('rNumber');
+const reset=document.getElementById('reset');
 function changeText(message){
     msgField.textContent=message;
     lNumber.textContent=playerScore;
@@ -30,6 +31,17 @@ scisBtn.addEventListener('click',function(){
     playRound(playerSelection,choice);
     changeText(message);
 })
+reset.addEventListener('click',function(){
+    playerScore=0;
+    computerScore=0;
+    showText();
+})
+function showText(){
+    msgField.textContent="Game Restarted";
+    lNumber.textContent='0';
+    rNumber.textContent='0';
+}
+
 let playerScore=0;
 let computerScore=0;
 function playComputer(){

@@ -3,6 +3,11 @@ html,body{
     height: 100%;
     margin:0;
     padding: 0;
+    background-color: whitesmoke;
+}
+img {
+    max-width:100%;
+    height:auto;
 }
 #container{
     display:flex;
@@ -11,6 +16,7 @@ html,body{
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    flex-wrap: nowrap;
 }
 #container >*{
     width:50%;
@@ -23,15 +29,38 @@ html,body{
     align-self: center;
     width:90%;
     height:90%;
+    background-color: rgb(220,220,220);
+    color: black;
+    border-radius: 20px;
+    font-size: 20px;
+    transition: 0.2s;
+}
+button img{
+        max-width:100%;
+        height:inherit;
+    }
+
+
+button::-moz-focus-inner {border:0;}
+
+#rockBtn{
+    color:blue;
+    
+}
+button:hover{
+    box-shadow: 2px 2px 5px 4px #eef0f0;
+    border: 2px solid grey;
 }
 #choose{
     width:50%;
-    height:10%;
+    height:8%;
     justify-self: center;
     align-self: center;
+    text-align: center;
+    flex-wrap: wrap;
 }
 #choose > *{
-    font-size:18px;
+    font-size:22px;
     font-weight: normal;
     font-style: italic;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -42,7 +71,7 @@ html,body{
     font-family: 'Varela Round', Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 50px;
     color:white;
-    background-color:white;
+
     justify-self: flex-start;
 }
 #left{
@@ -80,9 +109,70 @@ html,body{
 #result{
     width: 50%;
     justify-content: center;
-    padding-top: 1%;
+    font-family: 'Varela Round', Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24px;
 }
 h4{
     font-family: 'Varela Round', Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: normal;
+}
+#reset{
+    background-color: red;
+    color:white;
+    width:50%;
+    border-radius: 10px;
+}
+#rst{
+    height: 8%;
+    width:50%;
+
+}
+@media only screen and (max-width:700px){
+    #table{
+        width:50%;
+        height:15%;
+    }
+    #container>*{
+        width:50%;
+        height:16%;
+    }
+    body{
+        font-size:20px;
+        background-color:whitesmoke;
+    }
+    #result{
+        height:15%;
+        width:80%;
+        text-align: center;
+        min-height:100.05px;
+    }
+    #reset{
+        padding-top: 5%;
+    }
+    
+}
+@media only screen and (max-width:600){
+    #table{
+        width:50%;
+        height:10%;
+    }
+    #container>*{
+        width:50%;
+        height:10%;
+    }
+    body{
+        font-size:16px;
+        background-color:whitesmoke;
+    }
+    #result{
+        height:15%;
+        width:80%;
+        text-align: center;
+    }
+    #Rock #Paper #Scissors{
+        height: 30%;
+    }
+    #reset{
+        padding-bottom: 1%;
+    }
 }
