@@ -1,91 +1,40 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
-<header>
-
-
-
-</header>
+<head>
+<title>Rock,Paper,Scissors</title>
+<link href="style.css" rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"> 
+</head>
 <body>
-    
-
-    <script>
-        let playerScore=0;
-        let computerScore=0;
-        function playComputer(){
-            let variants=["ROCK","PAPER","SCISSORS"];
-            rand=Math.random();
-            rand*=variants.length;
-            rand=Math.floor(rand);
-            let choice=variants[rand];
-            return choice
-        }
-        let playerSelection;
-        let computerSelection;
-        let message;
-            function playerSelect(){
-               let Selection=prompt("Choose your weapon");
-                playerSelection=Selection.toUpperCase();
-                if(playerSelection!="PAPER" && playerSelection!="SCISSORS" && playerSelection!="ROCK"){
-                    console.log("Stop Cheating!");
-                    return playerSelect();
-
-                }
-                else{
-                return playerSelection;}
-            }
-        function playRound(playerSelection,computerSelection){
-            
-           if(playerSelection==computerSelection){
-               message="It's a tie!";}
-           else if(playerSelection=="ROCK" && computerSelection=="SCISSORS"){
-                     message="You Win!\n Computer chose Scissors";
-                    playerScore++; }
-           else if(playerSelection=="ROCK" && computerSelection=="PAPER"){
-                    message="You Lose! Computer chose Paper";
-                    computerScore++;}
-            else if(playerSelection=="PAPER" && computerSelection=="SCISSORS"){
-                message="You Lose! Computer chose Scissors";
-                    computerScore++;}
-                else if(playerSelection=="PAPER" && computerSelection=="ROCK"){
-                    message="You Win!Computer chose Rock";
-                    playerScore++;}
-            else if(playerSelection=="SCISSORS" && computerSelection=="ROCK"){
-                message="You Lose! Computer chose Rock";
-                       computerScore++;}
-            else if(playerSelection="ERROR"){
-                    message="Stop Cheating!"
-            }
-                else{  message="You Win! Computer chose Paper";
-                playerScore++;}
-        }
-        function   playGame(){
-            let i;
-            let msg;
-            
-                    for(i=0;i<5;i++){
-                        let numb1=playerSelect();
-                        let numb2=playComputer();
-                       
-                        playRound(numb1,numb2);
-                        console.log(message);
-                    }
-                    if(playerScore>computerScore){
-                        msg="Congratulations, You Won! ";
-                    
-                    }
-                    else if(computerScore>playerScore){
-                        msg=" You Lost this time! ";
-                    }
-                    else{
-                        "Tie!"
-                    }
-                    console.log(msg+"\nResults:Player:%d\n Computer:%d",playerScore,computerScore);
-                    playerScore=0;
-                    computerScore=0;
-
-        }    
-
-
+    <div id="container">
+        <div id="table">
+            <div id="left">
+                <h3 id='lNumber'>0</h3>
+            </div>
+            <h3 id="colon">:</h3>
+            <div id="right">
+                <h3 id='rNumber'>0</h3>
+            </div>
+        </div>
+        <div id="result">
+            <h4 id="res">Message</h4>
+        </div>
+        <div id="choose">
+        <h3>Choose Your Weapon:</h3>
+        </div>
+        <div id="Rock">
+            <button id="rockBtn">Rock</button>
+        </div>    
+        <div id="Paper">
+            <button id="paperBtn">Paper</button>
+        </div>
+        <div id="scissorsBtn">
+            <button id="Scissors">Scissors</button>
+        </div>
+    </div>    
+    <script src="main.js">
+        
             
     </script>
 </body>
